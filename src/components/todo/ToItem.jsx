@@ -1,18 +1,18 @@
 import {Card, Button, ListGroupItem} from "react-bootstrap"
 import {UncontrolledCollapse} from "reactstrap";
 
-const ToItem = ()=>{
+const ToItem = ({todo,remove, mark})=>{
     return(
         <ListGroupItem>
             <div className="row">
                 <div className="col-md-7">
-                    <span variant="primary" className="d-flex" style={{marginBottom:'1rem'}}>
-                        Uzduotis
+                    <span variant="primary" className="d-flex" id={`toggler${todo.id}`} style={{marginBottom:'1rem'}}>
+                        {todo.isComplete?<p><strike>{todo.title}</strike></p>:<p>{todo.title}</p>}
                     </span>
-                    <UncontrolledCollapse>
+                    <UncontrolledCollapse toggler={`#toggler${todo.id}`}>
                         <Card>
                             <Card.Body>
-                                uzduoties aprasymas
+                                {todo.description}
                             </Card.Body>
                         </Card>
                     </UncontrolledCollapse>
