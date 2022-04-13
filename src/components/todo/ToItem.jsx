@@ -19,8 +19,8 @@ const ToItem = ({todo,remove, mark})=>{
                 </div>
                 <div className="col-md-5">
                     <div className="ml-auto">
-                        <Button variant="danger">Pašalinti</Button>
-                        <Button variant="primary">Užbaigti</Button>
+                        <Button variant="danger" onClick={()=>remove(todo.id)}>Pašalinti</Button>
+                        <Button variant="primary" onClick={()=>mark(todo.id)}>Užbaigti</Button>
                     </div>
                 </div>
             </div>
